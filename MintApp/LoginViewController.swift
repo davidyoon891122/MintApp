@@ -25,8 +25,14 @@ class LoginViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "ministock"
-        label.font = .systemFont(ofSize: 35, weight: .heavy)
+        
+        let miniStringAttribute = [NSAttributedString.Key.font: UIFont.monospacedSystemFont(ofSize: 35, weight: .heavy), NSAttributedString.Key.foregroundColor: UIColor.label]
+        let stockStringAttribute = [NSAttributedString.Key.font: UIFont.monospacedSystemFont(ofSize: 35, weight: .light), NSAttributedString.Key.foregroundColor: UIColor.label]
+        
+        let miniString = NSMutableAttributedString(string: "mini", attributes: miniStringAttribute)
+        let stockString = NSMutableAttributedString(string: "stock", attributes: stockStringAttribute)
+        miniString.append(stockString)
+        label.attributedText = miniString
         label.textAlignment = .center
         label.textColor = .label
         return label
