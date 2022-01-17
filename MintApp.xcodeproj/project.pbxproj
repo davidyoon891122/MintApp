@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		AD7111A22795983E004C27C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111A12795983E004C27C6 /* AppDelegate.swift */; };
 		AD7111A42795983E004C27C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111A32795983E004C27C6 /* SceneDelegate.swift */; };
-		AD7111A62795983E004C27C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111A52795983E004C27C6 /* ViewController.swift */; };
-		AD7111A92795983E004C27C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7111A72795983E004C27C6 /* Main.storyboard */; };
 		AD7111AB2795983F004C27C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7111AA2795983F004C27C6 /* Assets.xcassets */; };
 		AD7111AE2795983F004C27C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7111AC2795983F004C27C6 /* LaunchScreen.storyboard */; };
 		AD7111B6279598FD004C27C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111B5279598FD004C27C6 /* LoginViewController.swift */; };
 		AD7111B927959DBC004C27C6 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111B827959DBC004C27C6 /* UIButton.swift */; };
+		AD7111BB2795A6C9004C27C6 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111BA2795A6C9004C27C6 /* PasswordView.swift */; };
+		AD7111BD2795AA56004C27C6 /* ViewLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7111BC2795AA56004C27C6 /* ViewLauncher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD71119E2795983E004C27C6 /* MintApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7111A12795983E004C27C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7111A32795983E004C27C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD7111A52795983E004C27C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AD7111A82795983E004C27C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD7111AA2795983F004C27C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7111AD2795983F004C27C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD7111AF2795983F004C27C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7111B5279598FD004C27C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AD7111B827959DBC004C27C6 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		AD7111BA2795A6C9004C27C6 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		AD7111BC2795AA56004C27C6 /* ViewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLauncher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +63,12 @@
 				AD7111B727959DAF004C27C6 /* extensions */,
 				AD7111A12795983E004C27C6 /* AppDelegate.swift */,
 				AD7111A32795983E004C27C6 /* SceneDelegate.swift */,
-				AD7111A52795983E004C27C6 /* ViewController.swift */,
-				AD7111A72795983E004C27C6 /* Main.storyboard */,
 				AD7111AA2795983F004C27C6 /* Assets.xcassets */,
 				AD7111AC2795983F004C27C6 /* LaunchScreen.storyboard */,
 				AD7111AF2795983F004C27C6 /* Info.plist */,
 				AD7111B5279598FD004C27C6 /* LoginViewController.swift */,
+				AD7111BA2795A6C9004C27C6 /* PasswordView.swift */,
+				AD7111BC2795AA56004C27C6 /* ViewLauncher.swift */,
 			);
 			path = MintApp;
 			sourceTree = "<group>";
@@ -140,7 +140,6 @@
 			files = (
 				AD7111AE2795983F004C27C6 /* LaunchScreen.storyboard in Resources */,
 				AD7111AB2795983F004C27C6 /* Assets.xcassets in Resources */,
-				AD7111A92795983E004C27C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,9 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7111BB2795A6C9004C27C6 /* PasswordView.swift in Sources */,
 				AD7111B927959DBC004C27C6 /* UIButton.swift in Sources */,
+				AD7111BD2795AA56004C27C6 /* ViewLauncher.swift in Sources */,
 				AD7111B6279598FD004C27C6 /* LoginViewController.swift in Sources */,
-				AD7111A62795983E004C27C6 /* ViewController.swift in Sources */,
 				AD7111A22795983E004C27C6 /* AppDelegate.swift in Sources */,
 				AD7111A42795983E004C27C6 /* SceneDelegate.swift in Sources */,
 			);
@@ -162,14 +162,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD7111A72795983E004C27C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD7111A82795983E004C27C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD7111AC2795983F004C27C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

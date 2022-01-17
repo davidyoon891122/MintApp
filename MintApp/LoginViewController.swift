@@ -8,6 +8,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    let blackView = UIView()
+    let testView = UIView()
     private lazy var labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -56,6 +59,8 @@ class LoginViewController: UIViewController {
         button.layer.borderColor = UIColor.separator.cgColor
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
         button.setBackgroundColor(.systemGreen, for: .highlighted)
         return button
     }()
@@ -67,6 +72,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .systemBackground
         addSubviews()
         setLayoutConstraint()
+        
     }
 }
 
@@ -90,4 +96,59 @@ private extension LoginViewController {
         loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    
+    
+    @objc func tapLoginButton() {
+        guard let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}) else {
+            return
+        }
+        
+        blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBlackView)))
+        testView.translatesAutoresizingMaskIntoConstraints = false
+        window.addSubview(blackView)
+        window.addSubview(testView)
+        
+        
+        
+        let height:CGFloat = 400
+        
+        let y = window.frame.height - height
+        testView.backgroundColor = .blue
+        testView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+        blackView.frame = window.frame
+        blackView.alpha = 0
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.blackView.alpha = 1
+            self.testView.frame = CGRect(x: 0,
+                                               y: y,
+                                               width: self.testView.frame.width,
+                                               height: self.testView.frame.height
+            )
+        }, completion: nil)
+
+        
+        
+        
+    }
+    
+    @objc func tapBlackView() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            
+            self.blackView.alpha = 0
+            
+            if let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}){
+                self.testView.frame = CGRect(
+                    x: 0,
+                    y: window.frame.height,
+                    width: self.testView.frame.width,
+                    height: self.testView.frame.height)
+            }
+        } completion: { _ in
+            
+        }
+    }
+
 }
