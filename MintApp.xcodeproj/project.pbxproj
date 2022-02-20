@@ -18,6 +18,8 @@
 		AD92A9E427C27EF000CC9488 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92A9E327C27EF000CC9488 /* HomeViewController.swift */; };
 		AD92A9E627C27F2B00CC9488 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92A9E527C27F2B00CC9488 /* MainTabBarController.swift */; };
 		AD92A9E927C280A900CC9488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD92A9E827C280A900CC9488 /* Alamofire */; };
+		AD92A9EC27C2824500CC9488 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92A9EB27C2824500CC9488 /* NetworkManager.swift */; };
+		AD92A9EE27C282EE00CC9488 /* MyStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92A9ED27C282EE00CC9488 /* MyStockModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		AD7111BC2795AA56004C27C6 /* ViewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLauncher.swift; sourceTree = "<group>"; };
 		AD92A9E327C27EF000CC9488 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AD92A9E527C27F2B00CC9488 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AD92A9EB27C2824500CC9488 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD92A9ED27C282EE00CC9488 /* MyStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStockModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				AD7111AF2795983F004C27C6 /* Info.plist */,
 				AD92A9E227C22EBC00CC9488 /* Scene */,
 				AD7111BC2795AA56004C27C6 /* ViewLauncher.swift */,
+				AD92A9EB27C2824500CC9488 /* NetworkManager.swift */,
+				AD92A9ED27C282EE00CC9488 /* MyStockModel.swift */,
 			);
 			path = MintApp;
 			sourceTree = "<group>";
@@ -99,10 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				AD92A9E127C22EB200CC9488 /* LoginView */,
-				AD92A9E327C27EF000CC9488 /* HomeViewController.swift */,
+				AD92A9EA27C2815100CC9488 /* HomeView */,
 				AD92A9E527C27F2B00CC9488 /* MainTabBarController.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		AD92A9EA27C2815100CC9488 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				AD92A9E327C27EF000CC9488 /* HomeViewController.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD92A9EC27C2824500CC9488 /* NetworkManager.swift in Sources */,
 				AD7111BB2795A6C9004C27C6 /* PasswordView.swift in Sources */,
 				AD7111B927959DBC004C27C6 /* UIButton.swift in Sources */,
 				AD92A9E627C27F2B00CC9488 /* MainTabBarController.swift in Sources */,
@@ -187,6 +202,7 @@
 				AD7111B6279598FD004C27C6 /* LoginViewController.swift in Sources */,
 				AD7111A22795983E004C27C6 /* AppDelegate.swift in Sources */,
 				AD92A9E427C27EF000CC9488 /* HomeViewController.swift in Sources */,
+				AD92A9EE27C282EE00CC9488 /* MyStockModel.swift in Sources */,
 				AD7111A42795983E004C27C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
