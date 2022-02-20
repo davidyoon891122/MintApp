@@ -10,7 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let blackView = UIView()
-    let testView = UIView()
+    let passwordView = PasswordView()
     private lazy var labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -76,6 +76,16 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController: LoginViewProtocol {
+    func checkLoginLogin() {
+        tapBlackView()
+        let vc = MainTabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false, completion: nil)
+    }
+}
+
+
 private extension LoginViewController {
     func addSubviews(){
         [labelStackView, loginButton]
@@ -92,9 +102,9 @@ private extension LoginViewController {
         labelStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
     }
     
     
@@ -105,32 +115,27 @@ private extension LoginViewController {
         
         blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBlackView)))
-        testView.translatesAutoresizingMaskIntoConstraints = false
         window.addSubview(blackView)
-        window.addSubview(testView)
-        
+        window.addSubview(passwordView)
+        passwordView.delegate = self
         
         
         let height:CGFloat = 400
         
         let y = window.frame.height - height
-        testView.backgroundColor = .blue
-        testView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+        passwordView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
         blackView.frame = window.frame
         blackView.alpha = 0
         
-        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.blackView.alpha = 1
-            self.testView.frame = CGRect(x: 0,
-                                               y: y,
-                                               width: self.testView.frame.width,
-                                               height: self.testView.frame.height
+            
+            self.passwordView.frame = CGRect(x: 0,
+                                         y: y,
+                                         width: self.passwordView.frame.width,
+                                         height: self.passwordView.frame.height
             )
         }, completion: nil)
-
-        
-        
         
     }
     
@@ -140,11 +145,11 @@ private extension LoginViewController {
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.windows.first(where: {$0.isKeyWindow}){
-                self.testView.frame = CGRect(
+                self.passwordView.frame = CGRect(
                     x: 0,
                     y: window.frame.height,
-                    width: self.testView.frame.width,
-                    height: self.testView.frame.height)
+                    width: self.passwordView.frame.width,
+                    height: self.passwordView.frame.height)
             }
         } completion: { _ in
             
